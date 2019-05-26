@@ -3,20 +3,139 @@
   <head>
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+ 
   </head>
+  <style>
+  .t1 {
+  animation: text 5s infinite;
+  position: absolute; }
+
+.t2 {
+  animation: text_2 5s infinite;
+  position: absolute; }
+
+.t3 {
+  animation: text_3 5s infinite;
+  position: absolute; }
+
+@-webkit-keyframes text {
+  0% {
+    opacity: 0; }
+  1% {
+    opacity: 1; }
+  32% {
+    opacity: 1; }
+  33.3% {
+    opacity: 0; }
+  98% {
+    opacity: 0; }
+  100% {
+    opacity: 0; } }
+
+@keyframes text {
+  0% {
+    opacity: 0; }
+  1% {
+    opacity: 1; }
+  32% {
+    opacity: 1; }
+  33.3% {
+    opacity: 0; }
+  98% {
+    opacity: 0; }
+  100% {
+    opacity: 0; } }
+
+@-webkit-keyframes text_2 {
+  0% {
+    opacity: 0;
+    z-index: -10000; }
+  32% {
+    opacity: 0;
+    z-index: -10000; }
+  33.3% {
+    opacity: 1;
+    z-index: 1; }
+  65% {
+    opacity: 1;
+    z-index: 2; }
+  66% {
+    opacity: 0;
+    z-index: -2; }
+  98% {
+    opacity: 0; }
+  100% {
+    opacity: 0; } }
+
+@keyframes text_2 {
+  0% {
+    opacity: 0;
+    z-index: -10000; }
+  32% {
+    opacity: 0;
+    z-index: -10000; }
+  33.3% {
+    opacity: 1;
+    z-index: 1; }
+  65% {
+    opacity: 1;
+    z-index: 2; }
+  66% {
+    opacity: 0;
+    z-index: -2; }
+  98% {
+    opacity: 0; }
+  100% {
+    opacity: 0; } }
+
+@-webkit-keyframes text_3 {
+  0% {
+    opacity: 0; }
+  65% {
+    opacity: 0; }
+  66.6% {
+    opacity: 1; }
+  99% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
+@keyframes text_3 {
+  0% {
+    opacity: 0; }
+  65% {
+    opacity: 0; }
+  66.6% {
+    opacity: 1; }
+  99% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+  </style>
   <body>
-     
+
+
+      <a href="/">First Page</a>
+      <a href="/restaurants">Restaurants</a>
+     <br>
+     <br>
       <ul class="right">
         <li>
         <% if (user) { %>
-          <a href="/logout"><i class="material-icons left">trending_flat</i>Log Out</a>
+          <a href="/logout"><i class="material-icons left"></i>Log Out</a>
         <% } else { %>
           <a href="/auth/google"><i class="material-icons left"></i>Login with Google</a>
         <% } %>
         </li>
       </ul>
-    <h1>Welcome to FOODLY</h1>
   
-
+  
+<div>
+    <div class="title t1"><h1>WELCOME TO FOODLY</h1></div>
+    <div class="title t2"><h1>SELECT OR SEARCH RESTAURANT YOU RECENTLY VISITED</h1></div>
+    <div class="title t3"><h1>COMMENT AND RATE FOOD YOU HAD</h1></div>
+  </div>
   </body>
 </html>
+
+

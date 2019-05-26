@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Foodly Restaurants</title>
+</head>
+<body>
+    <h1>Add New Restaurant</h1>
+    <form action="/restaurants" method="POST">
+        <label>Name of Restaurant: <input type="text" name="name"></label><br>
+        <label>Phone Number: <input type="text" name="phoneNumber"></label><br>
+        <label>Street Address: <input type="text" name="address"></label><br>
+        <label>City: <input type="text" name="city"></label><br>
+        <label>State: <input type="text" name="state"></label><br>
+        <label>Zip Code: <input type="number" name="zipCode"></label><br>
+        <label>Logo Link: <input type="text" name="logoLink"></label><br>
+        <label>Description: <input type="text" name="description"></label><br>
+        <label>Address Link: <input type="text" name="addressLink"></label><br>
+        <input type="submit" value="Add Restaurant">
+    </form>
+</body>
+</html>

@@ -17,7 +17,7 @@ router.get('/', usersController.index)
 router.get('/foodlycallback', passport.authenticate(
   'google',
   {
-    successRedirect : '/',
+    successRedirect : '/restaurants',
     failureRedirect : '/'
   }
 ));

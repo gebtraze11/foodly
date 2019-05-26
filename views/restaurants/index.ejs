@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Foodly Restaurants</title>
+</head>
+<style>
+body{
+    margin: 30px 30px;
+}
+a{
+    text-decoration: none;
+    color: brown;
+}
+</style>
+<body>
+        <img src="https://i.imgur.com/LIycIDL.png" width="100px" height="100px">
+       
+
+    <a href="/">First Page</a>
+    <a href="/restaurants">Restaurants</a>
+    <a href="/logout">Logout</a>
+    <br>
+    <br>
+   
+        <div>
+          <form action="/restaurants" method="GET">
+            <input type="text" name="name" placeholder="Search">
+         
+            <button type="submit">Go!</button>
+          </form>
+        </div>
+
+<h3> </h3>
+
+    <h1>All Restaurants</h1><br>
+    
+ 
+    <div>
+        <% restaurants.forEach(function(restaurant){ %>
+            <img src=" <%= restaurant.logoLink %> " height="100px" width="100px">
+            <%= restaurant.name %> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="/restaurants/<%=restaurant._id%>">View Menu</a> 
+            <br>
+            <p> <%= restaurant.description %> </p>
+            <br>
+            📞&nbsp; <a href="#"> <%= restaurant.phoneNumber%> </a>
+            <br>
+            <a href=" <%= restaurant.addressLink%> " target="_blank">
+                <%= restaurant.address%>,&nbsp;<%= restaurant.city%>,&nbsp;<%= restaurant.state%>&nbsp;<%= restaurant.zipCode%>
+            </a>
+            <br>
+            <br>
+        <br>
+        <br>
+        <% }); %>
+        
+    </div>
+
+
+</body>
+</html>
