@@ -7,7 +7,6 @@ var restaurantsCtrl = require('../controllers/restaurants')
 router.get('/', restaurantsCtrl.index)
 router.get('/new', restaurantsCtrl.newRestaurant);
 router.post('/', restaurantsCtrl.create);
-
 router.get('/:id', restaurantsCtrl.menu);
 
 module.exports = router;

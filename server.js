@@ -10,7 +10,7 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var restaurantsRouter = require('./routes/restaurants');
 var apiRouter = require('./routes/api');
-// var foodsRouter = require('./routes/foods')
+var foodsRouter = require('./routes/foods')
 
 require('dotenv').config();
 // require db
@@ -44,7 +44,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/restaurants', restaurantsRouter);
 app.use('/api', apiRouter);
-// app.use('/:id', foodsRouter);
+app.use('/:id', foodsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -2,6 +2,7 @@ const Food = require('../models/food');
 const Restaurant = require('../models/restaurant');
 
 
+
 module.exports = {
     newFood,
   createFood,
@@ -9,18 +10,19 @@ module.exports = {
   }
 
   function newFood(req, res){
-    res.render('restaurants/menuNew');
+    res.render('restaurants/addFood');
     
   }
 
   function createFood(req, res){
-    for (let key in req.body){
-      if(req.body[key] === '')
-      delete req.body[key];
-    }
-    var food = new Food(req.body);
-    food.save(function(err){
-      if(err) console.log(err);
-      res.redirect(`/restaurants/${restaurant._id}`);
+    Restaurant.findById(req.params.id, 
+      function(err, restaurant){
+      restaurant.food.push(req.body);
+      restaurant.save(function(err){
+        res.redirect(`/restaurants/${restaurant._id}`);
+      })
     })
   }
+
+   
+      
