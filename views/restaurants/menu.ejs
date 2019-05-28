@@ -13,10 +13,34 @@
         <a href="/logout">Logout</a>
     </div> 
 
-        <h1>hello</h1>
+        <h1><%= restaurant.name%></h1>
+        <h1><%= restaurant.id%></h1>
         <h3>Menu</h3>   
-   
 
+           
+<ul>
+       <% restaurant.menu.forEach(food => {%>
+       <li> <%= food.name%>
+                   <button>View Reviews</button>
+                <ul>
+                  <form action="/food/<%= food.id%>/" method="POST"> 
+                      <input type="text" placeholder="write your review here" name="comment">
+                      <input type="submit">
+                  </form> 
+                    <% food.reviews.forEach( review =>{%>
+                        <li><%= review.username%><%=review.comment%>
+                            <form action="/reviews/<%= review._id%>?_method=PUT" method="POST">
+                                <input type="text" name="comment" >
+                                </form>
+                        </li>
+                       
+                    <% })%>
+                    
+                </ul>
+            </li>
+      <% })%>
+      
+    </ul>
 </body>
 
 </html>

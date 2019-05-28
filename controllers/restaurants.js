@@ -10,12 +10,33 @@ module.exports = {
 
 
 function index(req, res){
-  Restaurant.find({}, function (err, restaurants){
-    res.render('restaurants/index',{
-      restaurants: restaurants
+  if(!req.query.search)
+    req.query.search = '';
+
+  if (!req.query.page)
+  req.query.page=1;
+
+  const regex = new RegExp(`${req.query.search}`, 'i');
+  console.log(regex);
+
+  Restaurant.find({name: {$regex: regex}})
+  .then(restaurants => {
+
+    const length = restaurants.length;
+
+    const page = parseInt(req.query.page)-1;
+    restaurants = restaurants.splice(page*5, 5);
+    res.render('restaurants/index', {
+      restaurants: restaurants,
+      page: parseInt(req.query.page),
+      maxPage: Math.ceil(length/5),
+      user: req.user
     })
-  })
+    
+  }).catch(err => console.log(err));
 }
+
+ 
 
 function newRestaurant(req, res){
   res.render('restaurants/new');

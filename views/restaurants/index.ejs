@@ -21,13 +21,36 @@ a{
 
     <a href="/">First Page</a>
     <a href="/restaurants">Restaurants</a>
+
+    <%
+        var next = page < maxPage ? page+1 : page;
+        var pre = page > 1 ? page-1 : 1;
+        console.log(page);
+        console.log(maxPage);
+    %>
+
+    <form action="/restaurants" method="GET">
+        <input type="hidden" name="page" value="<%= next %>">
+        <input type="submit" value="next">
+    </form>
+    <form action="/restaurants" method="GET">
+        <input type="hidden" name="page" value="<%= pre %>">
+        <input type="submit" value="pre">
+    </form>
+
     <a href="/logout">Logout</a>
+    
+    <br>
+    <% if (user && user.isAdmin) { %>
+        <a href="/restaurants/new">Add a new restaurant</a>
+    <% } %>
+    
     <br>
     <br>
    
         <div>
           <form action="/restaurants" method="GET">
-            <input type="text" name="name" placeholder="Search">
+            <input type="text" name="search" placeholder="Search">
          
             <button type="submit">Go!</button>
           </form>
@@ -36,16 +59,18 @@ a{
 <h3> </h3>
 
     <h1>All Restaurants</h1><br>
-    
- 
+        
+        
     <div>
         <% restaurants.forEach(function(restaurant){ %>
+
             <img src=" <%= restaurant.logoLink %> " height="100px" width="100px">
+      
             <%= restaurant.name %> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="/restaurants/<%=restaurant._id%>">View Menu</a> 
             <br>
             <p> <%= restaurant.description %> </p>
             <br>
-            📞&nbsp; <a href="#"> <%= restaurant.phoneNumber%> </a>
+            📞 &nbsp; <a href="#"> <%= restaurant.phoneNumber%> </a>
             <br>
             <a href=" <%= restaurant.addressLink%> " target="_blank">
             <%= restaurant.address%>,&nbsp;<%= restaurant.city%>,&nbsp;<%= restaurant.state%>&nbsp;<%= restaurant.zipCode%>
@@ -55,7 +80,7 @@ a{
         <br>
         <br>
         <% }); %>
-        
+ 
     </div>
 
 

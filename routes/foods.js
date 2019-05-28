@@ -5,8 +5,8 @@ var foodsCtrl = require('../controllers/foods')
 /* GET users listing. */
 
 
-router.get('/:id/addFood', foodsCtrl.newFood);
-router.post('/:id', foodsCtrl.createFood);
+router.get('/restaurants/:id/addFood', foodsCtrl.newFood);
+router.post('/restaurants/:id', foodsCtrl.createFood);
 
 
 module.exports = router;
