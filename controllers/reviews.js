@@ -10,8 +10,14 @@ function create(req, res){
         var food = restaurant.menu.id(req.params.id)
         req.body.username = req.user.name;
         food.reviews.push(req.body)
-        restaurant.save();
-        res.redirect(`/restaurants/${restaurant.id}`)
+        
+        food.setAverageRating();
+        console.log(food.averageRating);
+
+        restaurant.save(function(err, savedRestaurant) {
+            
+            res.redirect(`/restaurants/${restaurant.id}`)
+        });
     })
 }
 

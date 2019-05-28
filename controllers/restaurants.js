@@ -56,6 +56,7 @@ function create(req, res){
 
 function menu(req, res){
   Restaurant.findById(req.params.id, function(err, restaurant){
+    
     res.render('restaurants/menu', { title: 'Menu', restaurant})
   })
 }

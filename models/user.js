@@ -8,6 +8,7 @@ var userSchema = new mongoose.Schema({
         default: false
     },
     googleId: String
+    
 });
 
 

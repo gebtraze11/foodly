@@ -25,8 +25,6 @@ a{
     <%
         var next = page < maxPage ? page+1 : page;
         var pre = page > 1 ? page-1 : 1;
-        console.log(page);
-        console.log(maxPage);
     %>
 
     <form action="/restaurants" method="GET">
@@ -64,12 +62,11 @@ a{
     <div>
         <% restaurants.forEach(function(restaurant){ %>
 
-            <img src=" <%= restaurant.logoLink %> " height="100px" width="100px">
+            <img src=" <%= restaurant.logoLink %> " height="60px" width="100px" >
       
             <%= restaurant.name %> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="/restaurants/<%=restaurant._id%>">View Menu</a> 
             <br>
             <p> <%= restaurant.description %> </p>
-            <br>
             📞 &nbsp; <a href="#"> <%= restaurant.phoneNumber%> </a>
             <br>
             <a href=" <%= restaurant.addressLink%> " target="_blank">

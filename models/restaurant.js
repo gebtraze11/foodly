@@ -8,8 +8,19 @@ var reviewSchema = new mongoose.Schema({
 
 var foodSchema = new mongoose.Schema({
     name: String,
+    averageRating: {
+        type: Number,
+        default: null
+    },
     reviews: [reviewSchema]
 })
+
+foodSchema.methods.setAverageRating = function () {
+    let sum = 0;
+    this.reviews.forEach(function(r) { sum += r.rating })
+    return this.averageRating = sum / this.reviews.length;
+ 
+}
 
 var restaurantSchema = new mongoose.Schema({
     name: String,
