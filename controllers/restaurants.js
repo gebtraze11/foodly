@@ -1,4 +1,5 @@
 const Restaurant = require('../models/restaurant');
+const User = require('../models/user');
 
 module.exports = {
   index,
@@ -57,6 +58,16 @@ function create(req, res){
 function menu(req, res){
   Restaurant.findById(req.params.id, function(err, restaurant){
     
-    res.render('restaurants/menu', { title: 'Menu', restaurant})
+    let alreadyReviewed = [];
+    restaurant.menu.forEach((food, i)=>{
+      food.reviews.forEach((review, i) => {
+        if (req.user.name === review.username) {
+          // assign a variable to control the form
+          alreadyReviewed.push(food._id);
+        }
+      })
+    })
+
+    res.render('restaurants/menu', { title: 'Menu', restaurant ,user: req.user, alreadyReviewed })
   })
 }

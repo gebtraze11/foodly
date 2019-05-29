@@ -1,8 +1,11 @@
 const Restaurant = require('../models/restaurant')
+// const {Restaurant, Review} = require('../models/restaurant')
+
 
 module.exports = {
     create,
-    // update
+    update,
+    deleteReview
 }
 
 function create(req, res){
@@ -21,9 +24,28 @@ function create(req, res){
     })
 }
 
-// function update(req, res){
-//     Restaurant.findOne({'menu.reviews._id': req.params.id}, function(err, restaurant){
-//         var review = restaurant.menu.id(foodId).reviews.reviewId;
-//         restaurant.menu.review.
-//     })
-// }
+function update(req, res){
+    Restaurant.findOne({'menu._id': req.params.foodId}, function(err, restaurant){
+        var foodId = req.params.foodId
+        var reviewId = req.params.reviewId
+        var review = restaurant.menu.id(foodId).reviews.id(reviewId);
+        review.comment = req.body.comment;
+        restaurant.save()
+        res.redirect(`/restaurants/${restaurant.id}`)
+    });
+}
+
+
+function deleteReview(req, res){
+    Restaurant.findOne({'menu._id': req.params.foodId}, function(err, restaurant){
+        var foodId = req.params.foodId
+        var reviewId = req.params.reviewId
+        var review = restaurant.menu.id(foodId).reviews.id(reviewId);
+        console.log(review.comment)
+        review.remove()
+    //   review.remove()
+        restaurant.save()
+           
+        res.redirect(`/restaurants/${restaurant.id}`)
+    });
+}
