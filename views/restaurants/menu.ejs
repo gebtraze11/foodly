@@ -4,11 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.4.1.js"
-  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-  crossorigin="anonymous"></script>
-  <script defer src="/javascripts/editComment.js"></script>
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+        crossorigin="anonymous"></script>
+    <script defer src="/javascripts/editComment.js"></script>
     <title>Menu</title>
 </head>
 <body>
@@ -49,7 +48,7 @@
                     
                     <% if (!alreadyReviewed.includes(food._id)) { %>
 
-                    <form action="/food/<%= food.id%>/" method="POST"> 
+                    <form action="/food/<%= food.id%>/reviews" method="POST"> 
                         <input type="text" placeholder="Review <%=restaurant.name%>'s <%= food.name%>" name="comment" required>
                         <label>Rating:</label>
                         <select name="rating">
