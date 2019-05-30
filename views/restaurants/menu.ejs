@@ -32,17 +32,18 @@
                 <ul>
                  
                     <% food.reviews.forEach( review =>{ %>
-                        <li id='r-<%=review.id%>'><b><%= review.username%>: </b>&nbsp; 
+                        <li class="review-container"><b><%= review.username%>: </b>&nbsp; 
                             <span id='p-<%=review.id%>'><%=review.comment%> </span>
-                            <form id="review-form" action="/reviews/<%= food._id%>/<%= review._id%>?_method=PUT" method="POST">
-                                    <input id="edit-button" data-id="<%= review.id%>" type="submit" value="Edit">
-                             </form>
 
-                            <form id="delete-form" action="/reviews/<%= food._id%>/<%= review._id%>?_method=DELETE" method="POST">
+                            <% if (user.name === review.username) { %>
+                                <form id="review-form-<%=review.id%>" action="/reviews/<%= food._id%>/<%= review._id%>?_method=PUT" method="POST">
+                                    <input class="edit-button" data-id="<%= review.id%>" type="submit" value="Edit">
+                                </form>
+
+                                <form id="delete-form" action="/reviews/<%= food._id%>/<%= review._id%>?_method=DELETE" method="POST">
                                     <input id ="delete-button" data-id="<%= review.id%>" type="submit" value="Delete">
-                             </form>
-
-
+                                </form>
+                            <% } %>
                         </li>
                     <% })%>
                     
@@ -51,13 +52,13 @@
                     <form action="/food/<%= food.id%>/" method="POST"> 
                         <input type="text" placeholder="Review <%=restaurant.name%>'s <%= food.name%>" name="comment" required>
                         <label>Rating:</label>
-                            <select name="rating">
+                        <select name="rating">
                             <option value="5">5</option>
                             <option value="4">4</option>
                             <option value="3">3</option>
                             <option value="2">2</option>
                             <option value="1">1</option>
-                            </select>
+                        </select>
                         <input type="submit">
                     </form> 
                     <% } %>

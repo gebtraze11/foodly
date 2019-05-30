@@ -26,10 +26,12 @@ function create(req, res){
 
 function update(req, res){
     Restaurant.findOne({'menu._id': req.params.foodId}, function(err, restaurant){
+        console.log(req.body)
         var foodId = req.params.foodId
         var reviewId = req.params.reviewId
         var review = restaurant.menu.id(foodId).reviews.id(reviewId);
         review.comment = req.body.comment;
+        review.rating = req.body.rating;
         restaurant.save()
         res.redirect(`/restaurants/${restaurant.id}`)
     });
