@@ -20,7 +20,7 @@ module.exports = {
     Restaurant.findById(req.params.id, function(err, restaurant){
       restaurant.menu.push(req.body);
       restaurant.save(function(err){
-        res.redirect(`/restaurants/${restaurant._id}`);
+        res.redirect(`/restaurants/${restaurant.id}/addFood`);
       })
     })
   }

@@ -9,8 +9,8 @@ module.exports = {
 }
 
 function create(req, res){
-    Restaurant.findOne({'menu._id': req.params.id}, function(err, restaurant){
-        var food = restaurant.menu.id(req.params.id)
+    Restaurant.findById( req.params.restId, function(err, restaurant){
+        var food = restaurant.menu.id(req.params.foodId)
         req.body.username = req.user.name;
         food.reviews.push(req.body)
         

@@ -31,6 +31,7 @@ var restaurantSchema = new mongoose.Schema({
     state: String,
     zipCode: Number,
     description: String,
+    mapLogo: String,
     logoLink: String,
     addressLink: String
 })

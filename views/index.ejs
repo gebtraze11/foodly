@@ -6,49 +6,9 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
  
   </head>
-  <style>
-
-body{
-  background-image: url(https://i.imgur.com/4qSCpGQ.png);
-  height: 100vh;
-  background-repeat: no-repeat;
-  background-position: center;
-  margin-top: -100px;
-}
-ul{
-  list-style: none;
-}
-#first-page{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.loop{
-  text-align: center;
-  font-family: 'Cabin Sketch', cursive;
-  font-size: 65px;
-  color: green;
-}
-.in-out{
-  height: 40px;
-  border: 2px solid brown;
-  background-color: goldenrod;
-  font-size: 20px;
-  font-weight: bold;
-  color: rebeccapurple;
-  border-radius: 5px;
-}
-.in-out:hover{
-background: red;
-color: white;
-}
-  </style>
-
-  <body>
- <main id="first-page">
-    <div id="loop-text">
+  <body id="main-page">
+    <main id="first-page">
+      <div id="loop-text">
         <div class="title t1"><h1 class="loop">WELCOME TO FOODLY</h1></div>
         <div class="title t2"><h1 class="loop">SELECT OR SEARCH RESTAURANT YOU RECENTLY VISITED</h1></div>
         <div class="title t3"><h1 class="loop">COMMENT AND RATE FOOD YOU HAD</h1></div>
@@ -56,17 +16,19 @@ color: white;
       <div id="in-out">
         <ul>
           <li>
-          <% if (user) { %>
-            <a href="/logout"><button class="in-out"><img src="https://i.imgur.com/CQk1ZhV.png" width="15px" height="15px"> Log Out</button></a>
-              <% } else { %>
-          <a href="/auth/google"><button class="in-out"><img src="https://i.imgur.com/TJJ9gqW.png" width="15px" height="15px"> Login with Google</button></a> 
-              <% } %>
-            </li>
-            </ul>
-          </div>
+            <% if (user) { %>
+              <a href="/logout"><button class="in-out"><img src="https://i.imgur.com/CQk1ZhV.png" width="15px" height="15px"> Log Out</button></a>
+            <% } else { %>
+              <a href="/auth/google"><button class="in-out"><img src="https://i.imgur.com/TJJ9gqW.png" width="15px" height="15px"> Login with Google</button></a> 
+            <% } %>
+          </li>
+        </ul>
+      </div>
         
     </main>
-
+    <footer>
+        ©Foodly                                                                                                                                                                                       <a href="mailto:gebtraze11@GMAIL.COM" target="_blank">Contact Foodly</a>
+    </footer>
   </body>
 </html>
 

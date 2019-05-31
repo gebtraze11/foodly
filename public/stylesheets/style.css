@@ -1,5 +1,5 @@
-a {
-  color: #00B7FF;
+body{
+  height: 100vh;
 }
 .t1 {
   animation: text 7s infinite;
@@ -113,8 +113,220 @@ a {
     opacity: 1; }
   100% {
     opacity: 0; } } 
-
+/* -------------------- */
     #in-out{
       margin-top: 805px;
     }
+    #main-page{
+      background-image: url(https://i.imgur.com/4qSCpGQ.png);
+      height: 100vh;
+      background-repeat: no-repeat;
+      background-position: center;
+      margin-top: -100px;
+    }
+    ul{
+      list-style: none;
+    }
+    #first-page{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
     
+    .loop{
+      text-align: center;
+      font-family: 'Cabin Sketch', cursive;
+      font-size: 65px;
+      color: green;
+    }
+    .in-out{
+      height: 40px;
+      border: 2px solid brown;
+      background-color: goldenrod;
+      font-size: 20px;
+      font-weight: bold;
+      color: darkmagenta;
+      border-radius: 5px;
+    }
+    .in-out:hover{
+    background: brown;
+    color: white;
+    }
+    /* ----------------- */
+
+nav{
+  background-color: sienna;
+  display: flex;
+  flex-direction: row;
+  height: max-content;
+  align-items: center;
+  justify-content: space-between;
+  position: top;
+  box-shadow: 5px 5px black;
+
+}
+a{
+  color: inherit;
+  text-decoration: none;
+}
+.logo{
+  position: fixed;
+  top: -6px;
+  margin-left: -15px;
+}
+.item-1{
+  margin-left: 37em;
+}
+.item-2{
+  margin-right: 2em;
+}
+.items{
+  color: red;
+  background-color: lavender;
+  padding: 5px 4px;
+  border: 1px solid grey;
+  border-radius: 5px;
+  box-shadow: 5px 3px green;
+}
+.items:hover{
+  background-color: brown;
+  color: white;
+  box-shadow: 5px 3px beige;
+}
+#third-page{
+  display: flex;
+  background-color: #F8F8F8;
+  margin: 0px 10px;
+}
+#menu{
+  margin-top: -30px;
+}
+.menu-title{
+  font-family: 'Cabin Sketch', cursive;
+  margin: 0px 10px;
+  color: green;
+}
+#food-name{
+  font-size: 20px;
+  color: brown;
+  padding-right: 0px;
+}
+#rating{
+  font-size: 12px;
+  color: green;
+  margin-top: -2px;
+}
+#food-review-container{
+  display: flex;
+  flex-direction: row;
+  border: 1px solid grey;
+  overflow: scroll;
+  padding: 10px 20px;
+  border-radius: 10px;
+  width: 700px;
+}
+#comment-rate{
+  margin-left: 5%;
+}
+#edit-delete{
+  display: flex;
+  flex-direction: row; 
+}
+#username{
+  color: brown;
+}
+.review-comment{
+  color: green;
+  font-family: 'Cabin Sketch', cursive;
+}
+footer{
+  text-align: center;
+  background-color: black;
+  color: white;
+  font-size: 20px;
+  height: max-content;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+}
+#review-form-decor{
+  font-size: 15px;
+  border: 1px solid brown;
+  width: 100%;
+  border-radius: 5px;
+}
+
+/* ----------------- */
+
+
+.in-out:hover{
+  background: green;
+  color: white;
+}
+
+#restaurant{
+  margin: -120px 400px 0px 0px;
+}
+#add{
+  margin: -120px 550px 0px 0px;
+}
+#search{
+  margin-left: 1150px;
+  
+}
+#search>form>input{
+  height: 30px;
+  border-radius: 10px;
+  font-size: 20px;
+  width: 200px;
+}
+#second-page{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#restaurant-container{
+  display: flex;
+  flex-direction: row;
+  max-width: 40%;
+  border: 4px solid green;
+  padding: 5px 10px;
+  border-radius: 9px;
+
+}
+#restaurant-container>img{
+  padding-top: 30px;
+}
+#restaurant-head{
+  margin-top: -50px;
+  font-family: 'Cabin Sketch', cursive;
+  color: green;
+  font-weight: bold;
+  font-size: 45px;
+}
+#add{
+  margin-top: -70px;
+}
+
+.restaurant-name{
+  color: brown;
+}
+#restaurant{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.view{
+  background-color: black;
+  color:white;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+.view:hover{
+  background-color: brown;
+}
+.next-prev{
+  display: flex;
+  flex-direction: row;

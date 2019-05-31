@@ -6,8 +6,8 @@ $('.review-container').on('click', '.edit-button', function(e) {
   var  $reviewText = $(`#p-${id}`)
   console.log($reviewText);
   console.log($(this))
-  $reviewText.html(`<textarea form="review-form-${id}" name="comment" rows="2" cols="40"> ${$reviewText[0].textContent}</textarea>`)
-  $saveEdit = $(`<input type="submit" value="SAVE">`)
+  $reviewText.html(`<textarea form="review-form-${id}" name="comment" rows="3" cols="70"> ${$reviewText[0].textContent}</textarea>`)
+  $saveEdit = $(`<input type="submit" value="Save">`)
   $(this).replaceWith($saveEdit)
 })
 
