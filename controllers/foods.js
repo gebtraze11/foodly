@@ -1,12 +1,9 @@
 
 const Restaurant = require('../models/restaurant');
 
-
-
 module.exports = {
     newFood,
-  createFood,
-   
+    createFood,
   }
 
   function newFood(req, res){

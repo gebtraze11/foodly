@@ -10,86 +10,10 @@
 </head>
 <style>
     
-
-
-.in-out:hover{
-    background: green;
-    color: white;
-}
-
-#restaurant{
-    margin: -120px 400px 0px 0px;
-}
-#add{
-    margin: -120px 550px 0px 0px;
-}
-#search{
-    margin-left: 1150px;
-    
-}
-#search>form>input{
-    height: 30px;
-    border-radius: 10px;
-    font-size: 20px;
-
-}
-#second-page{
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-#restaurant-container{
-    display: flex;
-    flex-direction: row;
-    max-width: 40%;
-    border: 4px solid green;
-    padding: 5px 10px;
-    border-radius: 9px;
-  
-}
-#restaurant-container>img{
-    padding-top: 30px;
-}
-#restaurant-head{
-    margin-top: -50px;
-    font-family: 'Cabin Sketch', cursive;
-    color: green;
-    font-weight: bold;
-    font-size: 45px;
-}
-#add{
-    margin-top: -70px;
-}
-
-.restaurant-name{
-    color: brown;
-}
-#restaurant{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-.view{
-    background-color: black;
-    color:white;
-    border: 1px solid black;
-    border-radius: 5px;
-}
-.view:hover{
-    background-color: brown;
-}
-.next-prev{
-    display: flex;
-    flex-direction: row;
-
-}
 </style>
 <body>
        <nav>     
             <h1 >foodlu</h1>
-
-            
             <a href="/restaurants"> <h1 class="item-1 items"> RESTAURANTS</h1></a>
             <a href="/logout"> <h1 class="item-2 items">LOG-OUT</h1></a>
         </nav>
@@ -111,36 +35,32 @@
 
     <main id="second-page">
 
-    <h1 id="restaurant-head"> All Restaurants</h1><br>
+        <h1 id="restaurant-head"> All Restaurants</h1><br>
 
         <% restaurants.forEach(function(restaurant){ %>
             <div id="restaurant-container">
-        <div>
-            <img src=" <%= restaurant.logoLink %> " height="80px" width="100px" >
-        </div>
-        <div>
-            <h2 class="restaurant-name">&nbsp;&nbsp;<%= restaurant.name %></h2> 
-            <hr>
-            <p>&nbsp;&nbsp;<%= restaurant.description %> </p>
-           <p>📞 &nbsp; <a href="#"> <%= restaurant.phoneNumber%> </a></p> 
-          
-           <p> 
-            <p><%= restaurant.address%>,&nbsp;<%= restaurant.city%>,&nbsp;<%= restaurant.state%>&nbsp;<%= restaurant.zipCode%>
-          </p>   <a href="/restaurants/<%=restaurant._id%>"> <button class="view">View Menu </button></a> <a href="<%= restaurant.addressLink%>" target="_blank"> <button class="view">Directions</button> </a>
-          <br>
-          <br>
-          
-        </div>
-        
-    </div>
-    <br>
-        <br>
+                 <div>
+                    <img src=" <%= restaurant.logoLink %> " height="80px" width="100px" >
+                </div>
+                <div>
+                    <h2 class="restaurant-name">&nbsp;&nbsp;<%= restaurant.name %></h2> 
+                    <hr>
+                    <p>&nbsp;&nbsp;<%= restaurant.description %> </p>
+                        <p>📞 &nbsp; <a href="#"> <%= restaurant.phoneNumber%> </a></p> 
+                        <p><%= restaurant.address%>,&nbsp;<%= restaurant.city%>,&nbsp;<%= restaurant.state%>&nbsp;<%= restaurant.zipCode%>
+                        </p>   <a href="/restaurants/<%=restaurant._id%>"> <button class="view">View Menu </button></a> <a href="<%= restaurant.addressLink%>" target="_blank"> <button class="view">Directions</button> </a>
+                        <br>
+                </div>
+         
+            </div>
+            <br>
+             <br>
  
         <% }); %>
     <%
     var next = page < maxPage ? page+1 : page;
     var pre = page > 1 ? page-1 : 1;
-%>
+    %>
 <div class="next-prev">
         <form action="/restaurants" method="GET" class="view">
             <input type="hidden" name="page" value="<%= pre %>">

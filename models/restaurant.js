@@ -13,7 +13,7 @@ var foodSchema = new mongoose.Schema({
         default: 5
     },
     reviews: [reviewSchema]
-})
+},  )
 
 foodSchema.methods.setAverageRating = function () {
     let sum = 0;

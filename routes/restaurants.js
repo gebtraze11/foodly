@@ -7,7 +7,7 @@ var helper = require('../utils/isAdmin');
 
 router.get('/', restaurantsCtrl.index)
 router.get('/new', helper.isAdmin, restaurantsCtrl.newRestaurant);
-router.post('/', restaurantsCtrl.create);
+router.post('/', helper.isAdmin, restaurantsCtrl.create);
 router.get('/:id', restaurantsCtrl.menu);
 
 module.exports = router;
