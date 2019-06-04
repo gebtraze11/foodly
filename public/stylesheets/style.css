@@ -17,7 +17,8 @@ body{
 .t3 {
   animation: text_3 7s infinite;
   position: absolute; 
-  margin: 600px 0px 0px -500px;
+
+  margin: 601px 0px 0px -500px;
 }
 
 @-webkit-keyframes text {
