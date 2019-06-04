@@ -1,6 +1,6 @@
 module.exports = {
     isAdmin,
-    // isUser
+    isUser
 }
 
 // detect whether the request is being made by an Admin user
@@ -11,7 +11,7 @@ function isAdmin(req, res, next) {
 
 
 
-// function isUser(req, res){
-//     if (!req.user) 
-//         res.redirect('/')  
-// }
+function isUser(req, res){
+    if (!req.user) 
+        res.redirect('/')  
+}
