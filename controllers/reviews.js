@@ -45,7 +45,7 @@ function deleteReview(req, res){
         var review = restaurant.menu.id(foodId).reviews.id(reviewId);
         console.log(review.comment)
         review.remove()
-    //   review.remove()
+  
         restaurant.save()
            
         res.redirect(`/restaurants/${restaurant.id}`)

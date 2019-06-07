@@ -38,9 +38,4 @@ var restaurantSchema = new mongoose.Schema({
 
 
 module.exports = mongoose.model('Restaurant', restaurantSchema);
-// module.exports = mongoose.model('Review', reviewSchema);
 
-// module.exports = {
-//     Restaurant: mongoose.model('Restaurant', restaurantSchema),
-//     Review: mongoose.model('Review', reviewSchema)
-// }
